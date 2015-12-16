@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jboxcar.gui.JBoxCarController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="800.0" prefWidth="800.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+    <RowConstraints maxHeight="-Infinity" minHeight="400.0" prefHeight="400.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="281.0" minHeight="10.0" prefHeight="276.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="1000.0" style="-fx-border-color: black;" text="Label" GridPane.rowIndex="3" />
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-border-color: black;" GridPane.rowIndex="1">
+         <children>
+            <Canvas fx:id="canvas" height="400.0" width="800.0" />
+         </children>
+      </Pane>
+      <MenuBar GridPane.columnSpan="2147483647">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Settings">
+               <items>
+                  <RadioMenuItem fx:id="rmi_speed" mnemonicParsing="false" onAction="#handleRadioMenuItemDraw" text="Speed Mode" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1 1 1 0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <GridPane prefHeight="400.0" prefWidth="200.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="75.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <Label text="New World Seed:" GridPane.columnSpan="2147483647">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" text="Create" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label text="Gravity:" GridPane.rowIndex="5" />
+                  <Label text="Motor Speed:" GridPane.rowIndex="6" />
+                  <Label fx:id="lbl_generation" text="Generation:" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                  <Label fx:id="lbl_cars_left" text="Cars Left:" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                  <Label fx:id="lbl_distance" text="Distance (m):" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="cb_algorithm" prefWidth="120.0" promptText="Algorithm" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin></ComboBox>
+                  <Pane fx:id="p_ga" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </GridPane>
+                     </children></Pane>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10" GridPane.columnSpan="2147483647" GridPane.rowIndex="9">
+                     <children>
+                        <Button fx:id="btn_update" mnemonicParsing="false" onAction="#handleUpdateBtn" text="Update">
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <ToggleButton fx:id="btn_play" mnemonicParsing="false" onMouseClicked="#handlePlayBtn" text="Pause" />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="tf_gravity" minHeight="20.0" prefHeight="20.0" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.vgrow="NEVER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="tf_motor_speed" minHeight="20.0" prefHeight="20.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.vgrow="NEVER">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </Pane>
+      <Label fx:id="lbl_fps" alignment="CENTER" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="1000.0" style="-fx-border-color: black;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </Label>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <GridPane fx:id="gp_density" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="251.0" prefWidth="200.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="8.0" prefWidth="40.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="0.0" prefWidth="66.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="103.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane fx:id="p_gradient" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowSpan="2147483647" GridPane.vgrow="NEVER">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Pane>
+                  <VBox alignment="CENTER" maxWidth="40.0" minWidth="40.0" prefHeight="200.0" prefWidth="40.0" GridPane.hgrow="NEVER" GridPane.rowSpan="2147483647">
+                     <children>
+                        <Label alignment="CENTER" minWidth="100.0" rotate="-90.0" text="Densities" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
